@@ -15,6 +15,25 @@ def addition(a, b):
     temp = a + b
     return temp
 
+def condition_example(x, nest):
+    if x>0:
+        print('Since the value entered is greater than 0 the question asked is answered and it can print this statement')
+        if (nest > 1):
+            print('we can see that if the nest question is answered correctly, this will show')
+    elif x <= 0:
+        print('this will print if the value is less than or equal to 0')
+        if (nest > 1):
+            print('since this conditional is based on the condition before it being met, this outputs a different message at the same level of indentation')
+    else:
+        print('this code never runs unless something goes wrong, this can be used as a catch all if the if statements dont catch every possible answer to the question')
+        #an else statement is manditory, infact if no ifs are met the code just skips the code block entirely
+
+def danger_zone():
+    try:
+        print('this code is run if the code works without error')
+    except:
+        print('this code runs if the code nested under the try statement fails to run without error')
+
 # Variables store changing or not changing information. The variables have to start with a letter or '_'.
 # Variables can only use letters, numbers or "_".
 # When naming them it is important to choose a name that helps you remember what is in there
@@ -33,3 +52,29 @@ b = 2
 c = 3
 
 PEMDAS_EG = a - (b*c)**b  #brackets are done first, then power, then subtraction
+
+# Conditional statements ask questions and then run code based on the answer, the questions have to be asked in a specific way which use boolean operators.
+# These are: < , <=, ==, >=, >, != or less than, less than or equal to, equal to, greater than or equal to, grater than, and not equal 
+# Condiitonal statements can ask a question within a question (called nested statement) and can continue asking questions forever if desired
+# Programmers use indents (4 spaces     ) to indicate the scope of the statement (where one statement begins while nested in another statement)
+# indents are reduced  if the code segment has ended
+
+# there are several ways to make decisions using these statements
+
+print('one way')
+print('if this condition is met, do this, if not met the code block doesnt run')
+condition_example(1,0)
+
+print('two way')
+print('if this condition is not met, do something else')
+condition_example(0,0)
+
+print('multi-way')
+print('this variation of two way has multiple ifs to check and')
+condition_example(a,0)
+# BE cautions with multi way condtional statements as if statements are checked in order, so if x<2 , x<20, and x<10 are listed in that order
+# x<10 is never run because everything under 20 satifies the condition before it and that is run instead'
+
+print('try/except')
+print('this asks whether the code in the try section works and if it doesnt it runs the code under the except statement instead')
+danger_zone()
